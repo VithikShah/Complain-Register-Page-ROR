@@ -14,6 +14,11 @@
   <strong>Complain:</strong>
   <%= @complain.complain %>
 </p>
+<p>
+  <strong>Status:</strong>
+  <%= @complain.status %>
+</p>
+
 
 <%= link_to 'Edit', edit_complain_path(@complain) %> |
 <% if admin_signed_in? %>
