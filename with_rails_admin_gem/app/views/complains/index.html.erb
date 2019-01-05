@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Complains</h1>
+<% if current_user.admin %>
+    <%= link_to "Go to Admin Panel", rails_admin_path %>
+    <% end %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Subject</th>
+      <th>Complain</th>
+      <th scope="col">status</th>
+      <th scope="col">Remarks</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @complains.each do |complain| %>
+      <tr>
+        <td><%= complain.name %></td>
+        <td><%= complain.subject %></td>
+        <td><%= complain.complain %></td>
+        <td><%= complain.status %></td>
+         <td><%= complain.remarks %></td>
+        <td><%= link_to 'Show', complain %></td>
+        <td><%= link_to 'Edit', edit_complain_path(complain) %></td>
+        <td><%= link_to 'Destroy', complain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if !current_user.admin %>
+<%= link_to 'New Complain', new_complain_path %>
+ <% end %>
