@@ -9,7 +9,7 @@ Initial Steps:
 4.SignUp on the corresponding form
 5.go to your repo in system
 6.execute
-"rails db"
+"rails c"
 "u=User.first"
 "u.admin=true"
 "u.save"
